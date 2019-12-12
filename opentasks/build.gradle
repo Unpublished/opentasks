@@ -51,6 +51,8 @@ android {
     }
 
     lintOptions {
+        // Running lint over the debug variant is enough
+        checkReleaseBuilds false
         disable 'MissingTranslation' // TODO
     }
     compileOptions {
