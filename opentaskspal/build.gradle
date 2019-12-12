@@ -22,7 +22,7 @@ dependencies {
     api deps.contentpal
     api deps.datetime
     api deps.lib_recur
-    api deps.support_annotations
+    api deps.androidx_annotations
     api deps.bolts_color
 
     implementation deps.jems

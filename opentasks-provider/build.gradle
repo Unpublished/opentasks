@@ -40,9 +40,9 @@ dependencies {
 
     androidTestImplementation project(':opentaskspal')
     androidTestImplementation deps.contenttestpal
-    androidTestImplementation deps.support_annotations
-    androidTestImplementation deps.support_test_runner
-    androidTestImplementation deps.support_test_rules
+    androidTestImplementation deps.androidx_annotations
+    androidTestImplementation deps.androidx_test_runner
+    androidTestImplementation deps.androidx_test_rules
     androidTestImplementation deps.mockito
     androidTestImplementation deps.jems_testing
     androidTestImplementation deps.hamcrest

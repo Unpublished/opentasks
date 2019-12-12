@@ -26,20 +26,6 @@ import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
-import androidx.annotation.ColorInt;
-import androidx.annotation.NonNull;
-import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.tabs.TabLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.core.view.MenuItemCompat;
-import androidx.core.view.MenuItemCompat.OnActionExpandListener;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
-import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.SearchView.OnQueryTextListener;
-import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -48,10 +34,15 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
+
 import org.dmfs.android.bolts.color.Color;
 import org.dmfs.android.bolts.color.colors.PrimaryColor;
 import org.dmfs.android.bolts.color.elementary.ValueColor;
 import org.dmfs.android.retentionmagic.annotations.Retain;
+import org.dmfs.jems.single.adapters.Unchecked;
 import org.dmfs.provider.tasks.AuthorityUtil;
 import org.dmfs.tasks.contract.TaskContract.Tasks;
 import org.dmfs.tasks.groupings.AbstractGroupingFactory;
@@ -65,8 +56,20 @@ import org.dmfs.tasks.model.ContentSet;
 import org.dmfs.tasks.utils.BaseActivity;
 import org.dmfs.tasks.utils.ExpandableGroupDescriptor;
 import org.dmfs.tasks.utils.SearchHistoryHelper;
-import org.dmfs.jems.single.adapters.Unchecked;
 import org.dmfs.tasks.utils.colors.DarkenedForStatusBar;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
+import androidx.annotation.VisibleForTesting;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.SearchView.OnQueryTextListener;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
+import androidx.core.view.MenuItemCompat.OnActionExpandListener;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 
 
 /**
@@ -115,7 +118,8 @@ public class TaskListActivity extends BaseActivity implements TaskListFragment.C
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet device.
      */
     private boolean mTwoPane;
-    private ViewPager mViewPager;
+    @VisibleForTesting
+    ViewPager mViewPager;
     private TaskGroupPagerAdapter mPagerAdapter;
 
     @Retain(permanent = true)

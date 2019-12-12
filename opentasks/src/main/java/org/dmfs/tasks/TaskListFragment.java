@@ -74,6 +74,7 @@ import org.dmfs.tasks.utils.SafeFragmentUiRunnable;
 import org.dmfs.tasks.utils.SearchHistoryDatabaseHelper.SearchHistoryColumns;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.VisibleForTesting;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
@@ -117,7 +118,8 @@ public class TaskListFragment extends SupportFragment
     @Retain(permanent = true, instanceNSField = "mInstancePosition")
     private int mActivatedPositionChild = ExpandableListView.INVALID_POSITION;
 
-    private RetainExpandableListView mExpandableListView;
+    @VisibleForTesting
+    RetainExpandableListView mExpandableListView;
     private Context mAppContext;
     private ExpandableGroupDescriptorAdapter mAdapter;
     private Handler mHandler;

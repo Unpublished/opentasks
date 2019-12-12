@@ -61,8 +61,8 @@ android {
 
 dependencies {
     implementation project(':opentasks-provider')
-    implementation deps.support_appcompat
-    implementation deps.support_design
+    implementation deps.androidx_appcompat
+    implementation deps.androidx_design
     implementation(deps.xml_magic) {
         // xmlpull is part of the runtime, so don't pull it in here
         exclude group: 'xmlpull', module: 'xmlpull'
@@ -86,8 +86,9 @@ dependencies {
     testImplementation deps.robolectric
     testImplementation deps.jems_testing
 
-    androidTestImplementation deps.support_test_runner
-    androidTestImplementation deps.support_test_rules
+    androidTestImplementation deps.androidx_test_ext_junit
+    androidTestImplementation deps.androidx_test_runner
+    androidTestImplementation deps.androidx_test_rules
     implementation project(path: ':opentaskspal')
 }
 

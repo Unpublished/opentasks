@@ -16,7 +16,6 @@
 
 package org.dmfs.tasks.utils;
 
-import androidx.test.runner.AndroidJUnit4;
 import android.text.format.Time;
 
 import org.dmfs.rfc5545.DateTime;
@@ -25,6 +24,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.util.TimeZone;
+
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 
 /**
